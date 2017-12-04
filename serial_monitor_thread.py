@@ -135,7 +135,7 @@ class SerialMonitor(threading.Thread):
     def _read_stream(self):
         serial_input = self.stream.read(1024)
         if serial_input:
-            self._write_to_output(serial_input.decode(encoding="ascii", errors="replace"))
+            self._write_to_output(serial_input.decode(encoding="mbcs", errors="replace"))
 
     def _write_text(self):
         with self._text_lock:
